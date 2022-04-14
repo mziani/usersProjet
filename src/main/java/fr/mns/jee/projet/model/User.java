@@ -1,18 +1,50 @@
 package fr.mns.jee.projet.model;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 
-import fr.mns.jee.projet.model.Gender;
-import fr.mns.jee.projet.model.Address;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="users")
+public class User implements Serializable{
+	
 
-public class User {
+	private static final long serialVersionUID = 1L;
+
+	public User() {
+		super();
+	}
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false,unique = true,updatable = false)
 	private Long id;
+	
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private LocalDate birthDate;
+	@Column
 	private String phoneNumber;
+	
+	@Enumerated(EnumType.STRING)
+	@Column
 	private Gender gender;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="idaddress")
 	private Address address;
 	
 	public Long getId() {

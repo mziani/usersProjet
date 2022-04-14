@@ -1,6 +1,7 @@
-package fr.mns.jee.projet.users;
+package fr.mns.jee.projet;
 
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
