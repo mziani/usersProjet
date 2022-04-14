@@ -2,15 +2,24 @@ package fr.mns.jee.projet.model;
 
 import java.io.Serializable;
 
+import javax.persistence.*;
 
-
+@Entity
+@Table(name="address")
 public class Address implements Serializable{
 
-
 		private static final long serialVersionUID = 1L;
-		private Long id;
+		@Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
+		@Column(name = "id", updatable = false, nullable = false, unique=true)
+	    private Long id;
+		@Column
 		private Integer number;
+		@Column
 		private String street;
+		
+		@ManyToOne(fetch = FetchType.EAGER)
+		@JoinColumn(name="idcity")
 		private City city;
 		
 		public Long getId() {
