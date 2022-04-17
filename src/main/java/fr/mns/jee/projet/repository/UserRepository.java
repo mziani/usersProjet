@@ -16,6 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	List<User> findByBirthDateAfter(LocalDate date);
 	List<User> findByGender(Gender gender);
 	List<User> getByOrderByBirthDateAsc();
-	
-	
+
+
+    User findByUsername(String username);
 }

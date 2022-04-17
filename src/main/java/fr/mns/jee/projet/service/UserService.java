@@ -43,4 +43,8 @@ public class UserService {
 	public List<User> findByGender(Gender gender){
 		return repository.findByGender(gender);
 	}
+
+	public User findByUsername(String username) {
+		return repository.findByUsername(username);
+	}
 }
