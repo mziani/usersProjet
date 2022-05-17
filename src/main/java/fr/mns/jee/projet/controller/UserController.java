@@ -56,7 +56,7 @@ public class UserController {
 		return ResponseEntity.ok(user.get());
 	}
 
-	@ApiOperation(value = "create", notes="create new User", nickname = "createUser")
+	@ApiOperation(value = "create", notes = "create new User", nickname = "createUser")
 	@PostMapping("")
 	public ResponseEntity<?> create(@RequestBody @Valid EditRequestDTO request) throws URISyntaxException {
 		User user = userService.save(userConverter.convert(request));
@@ -83,7 +83,6 @@ public class UserController {
 		return ResponseEntity.noContent().build();
 	}
 
-	/*
 	@GetMapping("/username/{username}")
 	public User getUserByUsername(@PathVariable("username") String username) {
 		try {
@@ -93,6 +92,7 @@ public class UserController {
 		}
 	}
 
+	/*
 	@GetMapping("/")
 	public ModelAndView getUsers() {
 		ModelAndView mv = new ModelAndView("users");
