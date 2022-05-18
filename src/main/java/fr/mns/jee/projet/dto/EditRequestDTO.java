@@ -1,6 +1,7 @@
 package fr.mns.jee.projet.dto;
 
 import fr.mns.jee.projet.model.Gender;
+import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -31,7 +32,7 @@ public class EditRequestDTO {
     @NotBlank(message = "username is mandatory")
     private String username;
 
-    @NotBlank(message = "password is mandatory")
+    @Nullable
     private String password;
 
 
