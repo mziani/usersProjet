@@ -92,27 +92,4 @@ public class UserController {
 		}
 	}
 
-	/*
-	@GetMapping("/")
-	public ModelAndView getUsers() {
-		ModelAndView mv = new ModelAndView("users");
-		mv.addObject("users", userService.findByGender(Gender.FEMALE));
-		return mv;
-	}
-
-	@GetMapping("/addUsers")
-	public ModelAndView createUsersForm() {
-		ModelAndView mv = new ModelAndView("userForm");
-		mv.addObject("user", new User());
-		return mv;
-	}
-
-	@PostMapping("/addUser")
-	public String saveUser(@ModelAttribute("userForm") User user) {
-		userService.save(user);
-		return "redirect:/users";
-	}
-
-	 */
-
 }
