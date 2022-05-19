@@ -1,6 +1,7 @@
 package fr.mns.jee.projet.dto;
 
 import fr.mns.jee.projet.model.Gender;
+import fr.mns.jee.projet.model.Role;
 import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.NotBlank;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.Set;
 
 public class EditRequestDTO {
 
@@ -17,10 +19,9 @@ public class EditRequestDTO {
     @NotBlank(message = "lastName is mandatory")
     private String lastName;
 
-    @Past
+    @Past(message = "Birth date can not be in the future")
     private LocalDate birthDate;
 
-    @Size(min = 10,max = 10)
     private String phoneNumber;
 
     @NotNull
@@ -32,8 +33,9 @@ public class EditRequestDTO {
     @NotBlank(message = "username is mandatory")
     private String username;
 
-    @Nullable
     private String password;
+
+    private Set<Role> roles;
 
 
     public String getFirstName() {
@@ -83,5 +85,11 @@ public class EditRequestDTO {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+    public Set<Role> getRoles() {
+        return roles;
+    }
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
