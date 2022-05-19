@@ -19,8 +19,9 @@ public class UserConverter implements IUserConverter {
         user.setGender(editRequestDTO.getGender());
         user.setEmail(editRequestDTO.getEmail());
         user.setUsername(editRequestDTO.getUsername());
+        user.setRoles(editRequestDTO.getRoles());
 
-        if (editRequestDTO.getPassword().length() > 0) {
+        if (editRequestDTO.getPassword() != null) {
             user.setPassword(editRequestDTO.getPassword());
         }
 
@@ -35,8 +36,9 @@ public class UserConverter implements IUserConverter {
         user.setPhoneNumber(editRequestDTO.getPhoneNumber());
         user.setGender(editRequestDTO.getGender());
         user.setEmail(editRequestDTO.getEmail());
+        user.setRoles(editRequestDTO.getRoles());
 
-        if (editRequestDTO.getPassword().length() > 0) {
+        if (editRequestDTO.getPassword() != null) {
             user.setPassword(editRequestDTO.getPassword());
         }
 

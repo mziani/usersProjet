@@ -58,7 +58,7 @@ public class UserController {
 
 	@ApiOperation(value = "create", notes = "create new User", nickname = "createUser")
 	@PostMapping("")
-	public ResponseEntity<?> create(@RequestBody @Valid EditRequestDTO request) throws URISyntaxException {
+	public ResponseEntity<?> create(@Valid @RequestBody EditRequestDTO request) throws URISyntaxException {
 		User user = userService.save(userConverter.convert(request));
 
 		URI location = ServletUriComponentsBuilder
